@@ -1,0 +1,26 @@
+# Starter pipeline
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(c2ab9978-6746-4028-bc75-3f7ed4321ee6)'
+    scriptType: 'ps'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'https://github.com/PowerShell/PowerShell/releases/tag/v7.3.8'
+    powerShellErrorActionPreference: 'continue'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
